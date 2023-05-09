@@ -22,7 +22,16 @@ pipeline {
           }
         }
         
-        }   
+        } 
+    
+      stage('Docker build and push') {
+        steps {
+          sh 'printenv'
+          sh 'docker build -t youda313/numeric-app:""$GIT_COMMIT"" .'
+          sh 'docker push youda313/numeric-app:""$GIT_COMMIT""'
+        }
+      }
+    
     }
   
 }
