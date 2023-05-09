@@ -11,7 +11,7 @@ pipeline {
     
   
   
-      stage('Unit Tests - Maven') {
+      stage('Unit Tests - Maven and Jacoco') {
             steps {
               sh "mvn test"              
             }
